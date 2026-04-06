@@ -171,7 +171,7 @@ await apiInstance.sendTransacEmail({
 
 ## 🇸🇪 46elks — SMS & OTP
 
-**46elks.com** · HQ: Gothenburg, Sweden 🎉 (same city as USL!)
+**46elks.com** · HQ: Gothenburg, Sweden
 
 Simple, developer-friendly SMS/voice API. Swedish telecom company — extremely clean API, pay-per-use, no monthly fees.
 
@@ -279,7 +279,7 @@ const client = new OpenAI({
 
 const response = await client.chat.completions.create({
   model: 'mistral-large-latest',
-  messages: [{ role: 'user', content: 'Summarise this event description...' }],
+  messages: [{ role: 'user', content: 'Summarise this text...' }],
 })
 ```
 
@@ -328,10 +328,10 @@ const mollie = createMollieClient({ apiKey: process.env.MOLLIE_API_KEY! })
 // Create payment
 const payment = await mollie.payments.create({
   amount: { currency: 'EUR', value: '10.00' },
-  description: 'Ticket — AI for Non-Dummies',
-  redirectUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/events/your-event-slug/confirmed`,
+  description: 'Order #1234',
+  redirectUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/orders/1234/confirmed`,
   webhookUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/api/webhooks/mollie`,
-  metadata: { rsvp_id: rsvpId },
+  metadata: { order_id: orderId },
 })
 
 return redirect(payment.getCheckoutUrl()!)
@@ -345,7 +345,7 @@ export async function POST(request: Request) {
   const payment = await mollie.payments.get(paymentId)
 
   if (payment.isPaid()) {
-    // Mark RSVP as paid, send confirmation
+    // Mark order as paid, send confirmation
   }
 }
 ```
