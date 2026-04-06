@@ -18,7 +18,7 @@ A reference for **Next.js 14 App Router** applications deployed on **Vercel**, b
 | Layer | Service | Notes |
 |---|---|---|
 | Framework | Next.js 14 (App Router) | Server Components, API Routes, Middleware |
-| Database | Supabase (Postgres) | eu-north-1 (Stockholm) recommended |
+| Database | Supabase (Postgres) | Pick the region closest to your users |
 | Auth | Supabase Auth | Magic link (OTP), PKCE flow |
 | Realtime | Supabase Realtime | Live data subscriptions |
 | Hosting | Vercel | Auto-deploy from GitHub main |
@@ -113,6 +113,7 @@ if (authError) return authError
 
 - Apply via Supabase MCP: `mcp__claude_ai_Supabase__apply_migration`
 - Project ID: found in Supabase Dashboard → Project Settings → General
+- Choose the Supabase region closest to your users (e.g. eu-north-1 for Europe, us-east-1 for US East, ap-southeast-1 for Asia)
 - Never drop-and-recreate in production — use `ALTER TABLE`, `ADD COLUMN`, `CREATE POLICY`, `DROP POLICY`.
 - Always name migrations in snake_case (e.g. `add_published_to_posts`).
 

@@ -31,7 +31,7 @@ Claude reads the skill at the start of a conversation and uses it to give more a
 Clone this repo directly into your Claude skills directory:
 
 ```bash
-git clone https://github.com/noelbraganza/claude-skills.git ~/.claude/skills/claude-skills
+git clone https://github.com/noelbraganza/skills-much.git ~/.claude/skills/skills-much
 ```
 
 That's it. Claude Code will pick up the skills automatically on the next conversation.
@@ -51,7 +51,7 @@ cp -r ~/.claude/skills/claude-skills/eu-tech-stack ~/.claude/skills/
 ### Keep skills updated
 
 ```bash
-cd ~/.claude/skills/claude-skills && git pull
+cd ~/.claude/skills/skills-much && git pull
 ```
 
 ---
