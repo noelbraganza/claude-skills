@@ -1,4 +1,4 @@
-# claude-skills
+# skills-much
 
 A collection of reusable skills for [Claude Code](https://claude.ai/code) — drop-in context files that make Claude an expert in specific domains, tools, and tech stacks.
 
